@@ -19,7 +19,7 @@ public class Factorial {
 
     public static int recursiveFactorial(int num) {
         if (num == 0) return 1;
-        return 0;
-        
+
+        return num * recursiveFactorial(num - 1);
     }
 }

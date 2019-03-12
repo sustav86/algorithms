@@ -38,5 +38,9 @@ public class Main {
         int i = ArrayBuilder.random.nextInt(10);
         int i1 = Factorial.iterativeFactorial(i);
         System.out.println("Factorial of: " + i + ", is: " + i1);
+
+        int numFactorial = ArrayBuilder.random.nextInt(10);
+        int factorial = Factorial.iterativeFactorial(numFactorial);
+        System.out.println("Recursion factorial of: " + numFactorial + ", is: " + factorial);
     }
 }
