@@ -1,9 +1,5 @@
 package merge;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-
 public class MergeSort {
 
     public void sort(int[] array, int start, int end) {
