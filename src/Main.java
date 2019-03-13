@@ -1,6 +1,7 @@
 import bubble.BubbleSort;
 import insertion.InsertionSort;
 import merge.MergeSort;
+import quick.QuickSort;
 import recursion.Factorial;
 import selection.SelectionSort;
 import shell.ShellSort;
@@ -49,5 +50,11 @@ public class Main {
         System.out.println("Merge array: " + Arrays.toString(mergeArray));
         new MergeSort().sort(mergeArray, 0, mergeArray.length);
         System.out.println("Merge array: " + Arrays.toString(mergeArray));
+
+        System.out.println("Quick sort:");
+        int[] quickArray = ArrayBuilder.createArray(7);
+        System.out.println("Quick array: " + Arrays.toString(quickArray));
+        new QuickSort().sort(quickArray, 0, quickArray.length);
+        System.out.println("Quick array: " + Arrays.toString(quickArray));
     }
 }
