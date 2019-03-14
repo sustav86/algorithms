@@ -3,6 +3,7 @@ import counting.CountingSort;
 import insertion.InsertionSort;
 import merge.MergeSort;
 import quick.QuickSort;
+import radix.RadixSort;
 import recursion.Factorial;
 import selection.SelectionSort;
 import shell.ShellSort;
@@ -58,10 +59,16 @@ public class Main {
 //        new QuickSort().sort(quickArray, 0, quickArray.length);
 //        System.out.println("Quick array: " + Arrays.toString(quickArray));
 
-        System.out.println("Counting sort:");
-        int[] countingArray = ArrayBuilder.createArray(7);
-        System.out.println("Counting array: " + Arrays.toString(countingArray));
-        new CountingSort().sort(countingArray, 0, 100);
-        System.out.println("Counting array: " + Arrays.toString(countingArray));
+//        System.out.println("Counting sort:");
+//        int[] countingArray = ArrayBuilder.createArray(7);
+//        System.out.println("Counting array: " + Arrays.toString(countingArray));
+//        new CountingSort().sort(countingArray, 0, 100);
+//        System.out.println("Counting array: " + Arrays.toString(countingArray));
+
+        System.out.println("Radix sort:");
+        int[] radixArray = {4725, 4586, 1330, 8792, 1594, 5729};
+        System.out.println("Radix array: " + Arrays.toString(radixArray));
+        new RadixSort().sort(radixArray, 10, 4);
+        System.out.println("Radix array: " + Arrays.toString(radixArray));
     }
 }
