@@ -1,4 +1,5 @@
 import bubble.BubbleSort;
+import counting.CountingSort;
 import insertion.InsertionSort;
 import merge.MergeSort;
 import quick.QuickSort;
@@ -45,16 +46,22 @@ public class Main {
 //        int factorial = Factorial.iterativeFactorial(numFactorial);
 //        System.out.println("Recursion factorial of: " + numFactorial + ", is: " + factorial);
 
-        System.out.println("Merge sort:");
-        int[] mergeArray = ArrayBuilder.createArray(7);
-        System.out.println("Merge array: " + Arrays.toString(mergeArray));
-        new MergeSort().sort(mergeArray, 0, mergeArray.length);
-        System.out.println("Merge array: " + Arrays.toString(mergeArray));
+//        System.out.println("Merge sort:");
+//        int[] mergeArray = ArrayBuilder.createArray(7);
+//        System.out.println("Merge array: " + Arrays.toString(mergeArray));
+//        new MergeSort().sort(mergeArray, 0, mergeArray.length);
+//        System.out.println("Merge array: " + Arrays.toString(mergeArray));
+//
+//        System.out.println("Quick sort:");
+//        int[] quickArray = ArrayBuilder.createArray(7);
+//        System.out.println("Quick array: " + Arrays.toString(quickArray));
+//        new QuickSort().sort(quickArray, 0, quickArray.length);
+//        System.out.println("Quick array: " + Arrays.toString(quickArray));
 
-        System.out.println("Quick sort:");
-        int[] quickArray = ArrayBuilder.createArray(7);
-        System.out.println("Quick array: " + Arrays.toString(quickArray));
-        new QuickSort().sort(quickArray, 0, quickArray.length);
-        System.out.println("Quick array: " + Arrays.toString(quickArray));
+        System.out.println("Counting sort:");
+        int[] countingArray = ArrayBuilder.createArray(7);
+        System.out.println("Counting array: " + Arrays.toString(countingArray));
+        new CountingSort().sort(countingArray, 0, 100);
+        System.out.println("Counting array: " + Arrays.toString(countingArray));
     }
 }
