@@ -26,9 +26,20 @@ public class SimpleHashtable {
     }
 
     public StoredEmployee get(String key) {
-        int hashKey = hashKey(key);
+        int hashKey = findKey(key);
 
-        return hashtable[findKey(key)];
+        return hashKey != -1 ? hashtable[hashKey] : null;
+    }
+
+    public StoredEmployee remove(String key) {
+        StoredEmployee findEmployee = null;
+        int key1 = findKey(key);
+        if (key1 != -1) {
+            findEmployee = hashtable[key1];
+            hashtable[key1] = null;
+        }
+
+        return findEmployee;
     }
 
     public void print() {
@@ -39,13 +50,17 @@ public class SimpleHashtable {
 
     private int findKey(String key) {
         int hashKey = hashKey(key);
+        int startKey = 0;
 
-        while(!key.equals(hashtable[hashKey].key) && hashKey != hashtable.length - 1) {
+        while(!key.equals(hashtable[hashKey].key) && hashKey != (hashtable.length - 1) && startKey < 2) {
             hashKey = (hashKey + 1) % hashtable.length;
-            if (hashKey == hashtable.length - 1) hashKey = 0;
+            if (hashKey == hashtable.length - 1) {
+                hashKey = 0;
+                startKey++;
+            }
         }
 
-        return hashKey;
+        return key.equals(hashtable[hashKey].key) ? hashKey : -1;
     }
 
     private boolean occupied(int index) {

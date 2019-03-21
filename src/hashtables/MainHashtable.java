@@ -21,7 +21,10 @@ public class MainHashtable {
         simpleHashtable.put(esquaer.getFirstName(), esquaer);
 
         simpleHashtable.print();
-        System.out.println("Find Mark");
+        System.out.println("Find Makr");
         System.out.println(simpleHashtable.get("Makr"));
+        System.out.println("Remove Elis");
+        simpleHashtable.remove("Elis");
+        simpleHashtable.print();
     }
 }
