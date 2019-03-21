@@ -12,7 +12,7 @@ public class MainHashtable {
         Employee mira = new Employee(5, "Mira", "Getto");
         Employee esquaer = new Employee(6, "Esquaer", "Getto");
 
-        SimpleHashtable simpleHashtable = new SimpleHashtable(10);
+        SimpleHashtable simpleHashtable = new SimpleHashtable(7);
         simpleHashtable.put(david.getFirstName(), david);
         simpleHashtable.put(elis.getFirstName(), elis);
         simpleHashtable.put(frank.getFirstName(), frank);
@@ -21,5 +21,7 @@ public class MainHashtable {
         simpleHashtable.put(esquaer.getFirstName(), esquaer);
 
         simpleHashtable.print();
+        System.out.println("Find Mark");
+        System.out.println(simpleHashtable.get("Makr"));
     }
 }

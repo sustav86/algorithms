@@ -4,31 +4,48 @@ import entity.Employee;
 
 public class SimpleHashtable {
 
-    private Employee[] hashtable;
+    private StoredEmployee[] hashtable;
 
     public SimpleHashtable(int capacity) {
-        hashtable = new Employee[capacity];
+        hashtable = new StoredEmployee[capacity];
     }
 
     public void put(String key, Employee employee) {
         int hashKey = hashKey(key);
-        if (hashtable[hashKey] != null) {
+
+        while (occupied(hashKey) && hashKey != hashtable.length - 1) {
+            hashKey = (hashKey + 1) % hashtable.length;
+            if (hashKey == hashtable.length - 1) hashKey = 0;
+        }
+
+        if (occupied(hashKey)) {
             System.out.println("Sorry, collision, on position " + hashKey);
         }else {
-            hashtable[hashKey] = employee;
+            hashtable[hashKey] = new StoredEmployee(key, employee);
         }
     }
 
-    public Employee get(String key) {
+    public StoredEmployee get(String key) {
         int hashKey = hashKey(key);
 
-        return hashtable[hashKey];
+        return hashtable[findKey(key)];
     }
 
     public void print() {
         for (int i = 0; i < hashtable.length; i++) {
             System.out.println(hashtable[i]);
         }
+    }
+
+    private int findKey(String key) {
+        int hashKey = hashKey(key);
+
+        while(!key.equals(hashtable[hashKey].key) && hashKey != hashtable.length - 1) {
+            hashKey = (hashKey + 1) % hashtable.length;
+            if (hashKey == hashtable.length - 1) hashKey = 0;
+        }
+
+        return hashKey;
     }
 
     private boolean occupied(int index) {
