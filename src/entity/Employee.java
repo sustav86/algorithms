@@ -4,7 +4,7 @@ import lombok.*;
 
 @Data
 @AllArgsConstructor
-//@NoArgsConstructor
+@NoArgsConstructor
 //@RequiredArgsConstructor
 //@Getter
 //@Setter
@@ -13,6 +13,7 @@ import lombok.*;
 //@RequiredArgsConstructor
 public class Employee {
 
+    public static final Employee EMPTY_EMPLOYEE = new Employee();
     private int id;
     private String firstName;
     private String lastName;
