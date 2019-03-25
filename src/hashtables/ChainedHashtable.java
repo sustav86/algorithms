@@ -34,6 +34,19 @@ public class ChainedHashtable {
         return employee.orElse(StoredEmployee.EMPTY_STOREDEMPLOYEE);
     }
 
+    public StoredEmployee remove(String key) {
+        int hashKey = hashKey(key);
+        StoredEmployee removeEmployee = StoredEmployee.EMPTY_STOREDEMPLOYEE;
+        Optional<StoredEmployee> employee = hashtable[hashKey].stream().filter(storedEmployee -> key.equals(storedEmployee.key)).findFirst();
+        if (employee.isPresent()) {
+            removeEmployee = employee.get();
+            hashtable[hashKey].remove(removeEmployee);
+        }
+//        employee.ifPresent(storedEmployee -> hashtable[hashKey].remove(storedEmployee));
+
+        return removeEmployee;
+    }
+
     private int hashKey(String key) {
         return key.length() % hashtable.length;
     }
