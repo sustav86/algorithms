@@ -29,6 +29,13 @@ public class MainHashtable {
 
         ChainedHashtable chainedHashtable = new ChainedHashtable();
         chainedHashtable.put("david", david);
-        System.out.println(chainedHashtable.get("davide"));
+        chainedHashtable.put("mark", mark);
+        chainedHashtable.put("elis", elis);
+        chainedHashtable.put("frank", frank);
+        chainedHashtable.put("mira", mira);
+        System.out.println(chainedHashtable.get("david"));
+        chainedHashtable.printHashtable();
+        chainedHashtable.remove("david");
+        chainedHashtable.printHashtable();
     }
 }

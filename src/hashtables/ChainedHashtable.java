@@ -47,7 +47,15 @@ public class ChainedHashtable {
         return removeEmployee;
     }
 
+    public void printHashtable() {
+        for (int i = 0; i < hashtable.length; i++) {
+            System.out.println("Index: " + i);
+            hashtable[i].stream().forEach(System.out::println);
+        }
+    }
+
     private int hashKey(String key) {
-        return key.length() % hashtable.length;
+//        return key.length() % hashtable.length;
+        return Math.abs(key.hashCode() % hashtable.length);
     }
 }
