@@ -1,8 +1,10 @@
 package binarysearchtree;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainBinarySearch {
     public static void main(String[] args) {
-
         Tree tree = new Tree();
         tree.insert(25);
         tree.insert(20);
@@ -14,6 +16,7 @@ public class MainBinarySearch {
         tree.insert(29);
         tree.insert(32);
 
-        tree.traverseInOrder();
+//        tree.traverseInOrder();
+        System.out.println(tree.get(29));
     }
 }

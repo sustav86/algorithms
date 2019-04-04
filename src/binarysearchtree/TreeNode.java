@@ -1,6 +1,7 @@
 package binarysearchtree;
 
 public class TreeNode {
+    public static final TreeNode EMPTY_NODE = new TreeNode(-1);
     private int data;
     private TreeNode leftNode;
     private TreeNode rightNode;
@@ -27,6 +28,31 @@ public class TreeNode {
                 rightNode.insert(value);
             }
         }
+    }
+
+    public TreeNode get(int value) {
+        if (value == data) {
+            return this;
+        }
+        if (value < data) {
+            if (leftNode != null) {
+                return leftNode.get(value);
+            }
+        }else {
+            if (rightNode != null) {
+                return rightNode.get(value);
+            }
+        }
+
+        return EMPTY_NODE;
+    }
+
+    public int min() {
+        if (leftNode == null) {
+            return data;
+        }
+
+        return leftNode.min();
     }
 
     public int getData() {
@@ -61,5 +87,12 @@ public class TreeNode {
         if (rightNode != null) {
             rightNode.traverseInOrder();
         }
+    }
+
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+                "data=" + data +
+                '}';
     }
 }
