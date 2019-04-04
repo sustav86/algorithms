@@ -22,6 +22,12 @@ public class Tree {
         }
     }
 
+    public void traversePreOrder() {
+        if (root != null) {
+            root.traversePreOrder();
+        }
+    }
+
     public TreeNode get(int value) {
         if (root != null) {
             return root.get(value);

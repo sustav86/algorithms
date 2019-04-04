@@ -97,6 +97,16 @@ public class TreeNode {
         }
     }
 
+    public void traversePreOrder() {
+        System.out.print(data + ", ");
+        if (leftNode != null) {
+            leftNode.traversePreOrder();
+        }
+        if (rightNode != null) {
+            rightNode.traversePreOrder();
+        }
+    }
+
     @Override
     public String toString() {
         return "TreeNode{" +
