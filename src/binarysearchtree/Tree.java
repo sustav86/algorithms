@@ -30,6 +30,33 @@ public class Tree {
         return TreeNode.EMPTY_NODE;
     }
 
+    public void delete(int value) {
+        root = delete(root, value);
+    }
+
+    private TreeNode delete(TreeNode subTree, int value) {
+        if (subTree == null) {
+            return subTree;
+        }
+
+        if (value < subTree.getData()) {
+            subTree.setLeftNode(delete(subTree.getLeftNode(), value));
+        } else if (value > subTree.getData()) {
+            subTree.setRightNode(delete(subTree.getRightNode(), value));
+        } else {
+            if (subTree.getLeftNode() == null) {
+                return subTree.getRightNode();
+            } else if (subTree.getRightNode() == null) {
+                return subTree.getLeftNode();
+            }
+
+            subTree.setData(subTree.getRightNode().min());
+            subTree.setRightNode(delete(subTree.getRightNode(), subTree.getData()));
+        }
+
+        return subTree;
+    }
+
     public int min() {
         if (root == null) {
             return -1;
