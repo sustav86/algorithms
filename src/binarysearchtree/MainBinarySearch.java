@@ -2,6 +2,7 @@ package binarysearchtree;
 
 public class MainBinarySearch {
     public static void main(String[] args) {
+
         Tree tree = new Tree();
         tree.insert(25);
         tree.insert(20);
@@ -12,5 +13,7 @@ public class MainBinarySearch {
         tree.insert(30);
         tree.insert(29);
         tree.insert(32);
+
+        tree.traverseInOrder();
     }
 }

@@ -9,7 +9,7 @@ public class TreeNode {
         this.data = data;
     }
 
-    public void inser(int value) {
+    public void insert(int value) {
         if (value == data) {
             return;
         }
@@ -18,13 +18,13 @@ public class TreeNode {
             if (leftNode == null) {
                 leftNode = new TreeNode(value);
             } else {
-                leftNode.inser(value);
+                leftNode.insert(value);
             }
         } else {
             if (rightNode == null) {
                 rightNode = new TreeNode(value);
             } else {
-                rightNode.inser(value);
+                rightNode.insert(value);
             }
         }
     }
@@ -51,5 +51,15 @@ public class TreeNode {
 
     public void setRightNode(TreeNode rightNode) {
         this.rightNode = rightNode;
+    }
+
+    public void traverseInOrder() {
+        if (leftNode != null) {
+            leftNode.traverseInOrder();
+        }
+        System.out.print(data + ", ");
+        if (rightNode != null) {
+            rightNode.traverseInOrder();
+        }
     }
 }

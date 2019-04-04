@@ -8,7 +8,17 @@ public class Tree {
         if (root == null) {
             root = new TreeNode(value);
         } else {
-            root.inser(value);
+            root.insert(value);
+        }
+    }
+
+    public TreeNode getRoot() {
+        return root;
+    }
+
+    public void traverseInOrder() {
+        if (root != null) {
+            root.traverseInOrder();
         }
     }
 }
