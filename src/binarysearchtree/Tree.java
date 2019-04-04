@@ -29,4 +29,20 @@ public class Tree {
 
         return TreeNode.EMPTY_NODE;
     }
+
+    public int min() {
+        if (root == null) {
+            return -1;
+        }
+
+        return root.min();
+    }
+
+    public int max() {
+        if (root == null) {
+            return -1;
+        }
+
+        return root.max();
+    }
 }

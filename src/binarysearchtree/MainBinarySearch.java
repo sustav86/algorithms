@@ -15,8 +15,11 @@ public class MainBinarySearch {
         tree.insert(30);
         tree.insert(29);
         tree.insert(32);
+        tree.insert(14);
 
 //        tree.traverseInOrder();
         System.out.println(tree.get(29));
+        System.out.println(tree.min());
+        System.out.println(tree.max());
     }
 }
