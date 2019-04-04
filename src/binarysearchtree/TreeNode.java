@@ -107,6 +107,16 @@ public class TreeNode {
         }
     }
 
+    public void traversePostOrder() {
+        if (leftNode != null) {
+            leftNode.traversePostOrder();
+        }
+        if (rightNode != null) {
+            rightNode.traversePostOrder();
+        }
+        System.out.print(data + ", ");
+    }
+
     @Override
     public String toString() {
         return "TreeNode{" +

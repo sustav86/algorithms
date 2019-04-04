@@ -28,6 +28,12 @@ public class Tree {
         }
     }
 
+    public void traversePostOrder() {
+        if (root != null) {
+            root.traversePostOrder();
+        }
+    }
+
     public TreeNode get(int value) {
         if (root != null) {
             return root.get(value);

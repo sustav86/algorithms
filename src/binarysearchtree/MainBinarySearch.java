@@ -27,5 +27,7 @@ public class MainBinarySearch {
         tree.traverseInOrder();
         System.out.println();
         tree.traversePreOrder();
+        System.out.println();
+        tree.traversePostOrder();
     }
 }
