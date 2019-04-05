@@ -4,6 +4,7 @@ public class Heap {
 
     private int[] heap;
     private int size;
+    public static final int TOP = 0;
 
     public Heap(int capacity) {
         heap = new int[capacity];
@@ -39,6 +40,14 @@ public class Heap {
         size--;
 
         return deleteValue;
+    }
+
+    public int peek() {
+        if (isEmpty()) {
+            throw new IndexOutOfBoundsException("Heap is empty");
+        }
+
+        return heap[TOP];
     }
 
     public void printHeap() {

@@ -14,5 +14,7 @@ public class MainMaxHeap {
         heap.insert(88);
 
         heap.printHeap();
+        heap.delete(3);
+        heap.printHeap();
     }
 }
