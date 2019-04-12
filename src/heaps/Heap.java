@@ -42,6 +42,18 @@ public class Heap {
         return deleteValue;
     }
 
+    public void sort() {
+        int lastIndex = size - 1;
+        for (int i = 0; i < lastIndex; i++) {
+            int temp = heap[0];
+            heap[0] = heap[lastIndex - 1];
+            heap[lastIndex - 1] = temp;
+
+            fixHeapBelow(0, lastIndex - i - 1);
+        }
+
+    }
+
     public int peek() {
         if (isEmpty()) {
             throw new IndexOutOfBoundsException("Heap is empty");
